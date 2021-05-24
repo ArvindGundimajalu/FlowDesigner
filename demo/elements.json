@@ -1,0 +1,81 @@
+{
+    "Elements":[ 
+        {
+          "type": "trigger",
+          "iconInactive": "assets/eye.svg",
+          "iconActive": "assets/eyeblue.svg",
+          "name": "New visitor",
+          "info": "When a <span>new visitor</span> goes to <span>Site 1</span>"
+        },
+        {
+          "type": "trigger",
+          "iconInactive": "assets/action.svg",
+          "iconActive": "assets/actionblue.svg",
+          "name": "Action is performed",
+          "info": "When <span>Action 1</span> is performeds</span>"
+        },
+        {
+          "type": "trigger",
+          "iconInactive": "assets/time.svg",
+          "iconActive": "assets/timeblue.svg",
+          "name": "Time has passed",
+          "info": "When <span>10 seconds</span> have passed</span>"
+        },
+        {
+          "type": "trigger",
+          "iconInactive": "assets/error.svg",
+          "iconActive": "assets/errorblue.svg",
+          "name": "Error prompt",
+          "info": "When <span>Error 1</span> is triggered"
+        },
+        {
+          "type": "action",
+          "iconInactive": "assets/database.svg",
+          "iconActive": "assets/databaseorange.svg",
+          "name": "New database entry",
+          "info": "Add <span>Data object</span> to <span>Database 1</span>"
+        },
+        {
+          "type": "action",
+          "iconInactive": "assets/database.svg",
+          "iconActive": "assets/databaseorange.svg",
+          "name": "Update database",
+          "info": "Update <span>Database 1</span></span>"
+        },
+        {
+          "type": "action",
+          "iconInactive": "assets/action.svg",
+          "iconActive": "assets/actionorange.svg",
+          "name": "Perform an action",
+          "info": "Perform <span>Action 1</span>"
+        },
+        {
+          "type": "action",
+          "iconInactive": "assets/twitter.svg",
+          "iconActive": "assets/twitterorange.svg",
+          "name": "Make a tweet",
+          "info": "Tweet <span>Query 1</span> with the account <span>@Arvind.G</span>"
+        },
+        {
+          "type": "logger",
+          "iconInactive": "assets/log.svg",
+          "iconActive": "assets/logred.svg",
+          "name": "Add new log entry",
+          "info": "Add new <span>success</span> log entry"
+        },
+        {
+          "type": "logger",
+          "iconInactive": "assets/log.svg",
+          "iconActive": "assets/logred.svg",
+          "name": "Update logs",
+          "info": "Edit <span>Log Entry 1</span>"
+        },
+        {
+          "type": "logger",
+          "iconInactive": "assets/error.svg",
+          "iconActive": "assets/errorred.svg",
+          "name": "Prompt an error",
+          "info": "Trigger <span>Error 1</span>"
+        }
+      ]
+    }
