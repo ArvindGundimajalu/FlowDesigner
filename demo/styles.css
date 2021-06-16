@@ -491,6 +491,20 @@ body, html {
     font-size: 14px;
     color: #253134;
 }
+.textinput {
+    background-color: #FFF;
+    border-radius: 5px;
+    border: 1px solid #E8E8EF;
+    box-shadow: 0px 2px 8px rgba(34, 34, 87, 0.05);
+    font-family: Roboto;
+    font-size: 14px;
+    color: #253134;
+    text-indent: 20px;
+    height: 40px;
+    line-height: 40px;
+    width: 287px;
+    margin-bottom: 25px;
+}
 .dropme {
     background-color: #FFF;
     border-radius: 5px;

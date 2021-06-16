@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("blocklist").innerHTML += 
             '<div class="blockelem create-flowy noselect">\
                 <input type="hidden" name="blockelemtype" class="blockelemtype" value="'+elementCount+'">\
+                <input type="hidden" name="blockClass" class="blockelemtype" value="'+element.class+'">\
                 <div class="grabme">\
                     <img src="assets/grabme.svg">\
                 </div>\
@@ -53,6 +54,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
             elementCount++;
         });
+    }
+
+    function renderProperties(source){
+        document.getElementById("proplist").innerHTML = "";
+        sourceType = source.getElementsByClassName("blockelemtype")[1].value;
+        
+        let formText = "";
+        filteredElementSet = elements.Elements.filter(element => element.class == sourceType);
+        filteredElementSet[0].properties.forEach(properties => {
+            formText +=`<p class="inputlabel">${properties.name}</p>`;
+            switch(properties.type) {
+                case "string":
+                    formText += `<div class="textinput">${properties.default}</div>`;
+                    break;
+                case "datetime":
+                    // code block
+                    break;
+                case "choice":
+                    formText += `<div class="dropme">${properties.default}<img src="assets/dropdown.svg"></div>`
+                    break;
+                case "checkbox":
+                    formText += '<div class="checkus"><img src="assets/checkoff.svg"><p>Give priority to this block</p></div>';
+                    break; 
+                default:
+                // do Nothing
+            }
+        });
+        formText += '<div class="submit">Save</div>';
+        document.getElementById("proplist").innerHTML += formText;
+        document.getElementById("properties").classList.add("expanded");
+        document.getElementById("propwrap").classList.add("itson");
+        rightcard = true;
+    }
+
+    function findAncestor (el, cls) {
+        while ((el = el.parentElement) && !el.classList.contains(cls));
+        return el;
     }
 
     flowy(document.getElementById("canvas"), drag, release, snapping);
@@ -90,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function release() {
         if (dragBlock) {
             dragBlock.classList.remove("blockdisabled");
+            renderProperties(dragBlock);
         }
     }
     var disabledClick = function () {
@@ -132,9 +171,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.type === "mouseup" && aclick && !noinfo) {
             if (!rightcard && event.target.closest(".block") && !event.target.closest(".block").classList.contains("dragging")) {
                 touchBlock = event.target.closest(".block");
-                rightcard = true;
-                document.getElementById("properties").classList.add("expanded");
-                document.getElementById("propwrap").classList.add("itson");
+
+                var source = event.target || event.srcElement;
+                renderProperties(source);
                 touchBlock.classList.add("selectedblock");
             }
         }

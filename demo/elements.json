@@ -1,28 +1,74 @@
 {
-    "Elements":[ 
+    "Elements":[
         {
           "type": "trigger",
+          "class":  "triggerOnCSVFileArrives",
           "iconInactive": "assets/eye.svg",
           "iconActive": "assets/eyeblue.svg",
-          "name": "New visitor",
-          "info": "When a <span>new visitor</span> goes to <span>Site 1</span>"
+          "name": "New CSV file",
+          "info": "When a new CSV arrives",
+          "properties":[ 
+              {
+                  "name": "File Name",
+                  "type": "string",
+                  "default": "",
+                  "options": "",
+                  "constraint": "" 
+              },
+              {
+                "name": "DOB",
+                "type": "string",
+                "default": "",
+                "options": "",
+                "constraint": "" 
+            }
+            ]
         },
         {
           "type": "trigger",
+          "class":  "triggerAtSpecificTime",
+          "iconInactive": "assets/time.svg",
+          "iconActive": "assets/timeblue.svg",
+          "name": "At Specific Time",
+          "info": "When it's time for it",
+          "properties":[ 
+              {
+                  "name": "File Name",
+                  "type": "string",
+                  "default": "",
+                  "options": "",
+                  "constraint": "" 
+              }
+            ]
+        },
+        {
+          "type": "trigger",
+          "class":  "triggerOnActionPerformed",
           "iconInactive": "assets/action.svg",
           "iconActive": "assets/actionblue.svg",
           "name": "Action is performed",
-          "info": "When <span>Action 1</span> is performeds</span>"
+          "info": "When <span>Action 1</span> is performed",
+          "properties":[ 
+              {
+                  "name": "File Name",
+                  "type": "string",
+                  "default": "",
+                  "options": "",
+                  "constraint": "" 
+              }
+            ]
         },
         {
           "type": "trigger",
+          "class":  "triggerOnTimeout",
           "iconInactive": "assets/time.svg",
           "iconActive": "assets/timeblue.svg",
-          "name": "Time has passed",
-          "info": "When <span>10 seconds</span> have passed</span>"
+          "name": "Timeout",
+          "info": "When <span>specified seconds</span> have passed</span>"
         },
         {
           "type": "trigger",
+          "class":  "triggerOnError",
           "iconInactive": "assets/error.svg",
           "iconActive": "assets/errorblue.svg",
           "name": "Error prompt",
@@ -30,6 +76,7 @@
         },
         {
           "type": "action",
+          "class":  "performNewDatabaseEntry",
           "iconInactive": "assets/database.svg",
           "iconActive": "assets/databaseorange.svg",
           "name": "New database entry",
@@ -37,6 +84,7 @@
         },
         {
           "type": "action",
+          "class":  "performDatabaseUpdate",
           "iconInactive": "assets/database.svg",
           "iconActive": "assets/databaseorange.svg",
           "name": "Update database",
@@ -44,13 +92,15 @@
         },
         {
           "type": "action",
+          "class":  "performDatabseDeletion",
           "iconInactive": "assets/action.svg",
           "iconActive": "assets/actionorange.svg",
-          "name": "Perform an action",
-          "info": "Perform <span>Action 1</span>"
+          "name": "Delete Database Entery",
+          "info": "Perform database entry"
         },
         {
           "type": "action",
+          "class":  "performTwitterMessageing",
           "iconInactive": "assets/twitter.svg",
           "iconActive": "assets/twitterorange.svg",
           "name": "Make a tweet",
@@ -58,6 +108,7 @@
         },
         {
           "type": "logger",
+          "class":  "logEntry",
           "iconInactive": "assets/log.svg",
           "iconActive": "assets/logred.svg",
           "name": "Add new log entry",
@@ -65,6 +116,7 @@
         },
         {
           "type": "logger",
+          "class":  "logUpdate",
           "iconInactive": "assets/log.svg",
           "iconActive": "assets/logred.svg",
           "name": "Update logs",
@@ -72,6 +124,7 @@
         },
         {
           "type": "logger",
+          "class":  "logPromptError",
           "iconInactive": "assets/error.svg",
           "iconActive": "assets/errorred.svg",
           "name": "Prompt an error",
